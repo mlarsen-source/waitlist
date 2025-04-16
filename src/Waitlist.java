@@ -50,6 +50,22 @@ public class Waitlist {
     // Where n is studentIds.length
 
     // Don't forget to write tests too!
+    int insertPointer = 0;
+
+    for (int i = 0; i < studentIds.length; i++) 
+    {
+      if(studentIds[i] != null && !toRemove.contains(studentIds[i])) 
+      {
+        studentIds[insertPointer] = studentIds[i];
+        insertPointer++;
+      }
+    }
+
+    for(int i = insertPointer; i < studentIds.length; i++)
+    {
+      studentIds[i] = null;
+    }
+
   }
 
   /**
